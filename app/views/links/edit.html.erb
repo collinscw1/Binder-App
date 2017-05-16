@@ -28,6 +28,11 @@
 			<%= f.text_area :description %>
 		</div>
 
+		<div class="form_field">
+			<%= f.label "Page" %>
+			<%= f.select :page_id, Page.all.collect { |p| [ p.title, p.id ] } %>
+		</div>
+
 		<div class="form_actions">
 			<%= f.submit %>
 		</div>

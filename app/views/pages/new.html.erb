@@ -1,0 +1,25 @@
+<h1>Add New Page</h1>
+
+<div class="form">
+	<%= form_for @page do |f| %>
+		<% if @page.errors.any? %>
+			<div id="error_explanation">
+				<h2>Whoops!</h2>
+				<ul>
+					<% page.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="form_field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="form_actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

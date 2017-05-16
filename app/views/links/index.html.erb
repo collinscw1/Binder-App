@@ -1,5 +1,16 @@
 <h1>All Links</h1>
 
+<p><%= link_to 'Add New Link', new_link_path %></p>
+<p><%= link_to 'Add New Page', new_page_path %></p>
+
+<table>
+	<% @pages.each do |page| %>
+		<tr>
+			<td><%= page.title %></td>
+		</tr>
+	<% end %>
+</table>
+
 <table>
 	<% @links.each do |link| %>
 		<tr>
