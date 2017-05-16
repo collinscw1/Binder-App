@@ -1,0 +1,36 @@
+<h1>Add New Link</h1><br>
+
+<div class="form">
+	<%= form_for @link do |f| %>
+		<% if @link.errors.any? %>
+			<div id="error_explanation">
+				<h2>Whoops!</h2>
+				<ul>
+					<% product.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="form_field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="form_field">
+			<%= f.label :url %>
+			<%= f.url_field :url %>
+		</div>
+
+		<div class="form_field">
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</div>
+
+		<div class="form_actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
+

@@ -1,0 +1,20 @@
+<h1>All Links</h1>
+
+<table>
+	<% @links.each do |link| %>
+		<tr>
+			<td class="link_description">
+				<dl>
+					<dt><%= link.title %></dt>
+					<dt><%= link.url %></dt>
+					<dt><%= link.description %></dt>
+				</dl>
+			</td>
+
+			<td class="link_actions">
+				<%= link_to 'Edit', edit_link_path(link) %>
+				<%= link_to 'Delete', link_path(link), method: :delete, data: { confirm: 'Are you sure?' } %>
+			</td>
+		</tr>
+	<% end %>
+</table>
