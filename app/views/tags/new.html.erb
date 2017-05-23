@@ -1,0 +1,25 @@
+<h1>Add New Tag</h1>
+
+<div class="form">
+	<%= form_for @tag do |f| %>
+		<% if @tag.errors.any? %>
+			<div id="error_explanation">
+				<h2>Whoops!</h2>
+				<ul>
+					<% page.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="form_field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div class="form_actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
